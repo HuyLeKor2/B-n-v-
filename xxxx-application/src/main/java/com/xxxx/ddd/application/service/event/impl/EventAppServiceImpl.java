@@ -1,0 +1,18 @@
+package com.xxxx.ddd.application.service.event.impl;
+
+import com.xxxx.ddd.application.service.event.EventAppService;
+import com.xxxx.ddd.domain.repository.HiDomainRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class EventAppServiceImpl implements EventAppService {
+    //Call Domain Service
+    @Autowired
+    private HiDomainRepository hiDomainRepository;
+
+    @Override
+    public String sayHi(String who) {
+        return hiDomainRepository.sayHi(who);
+    }
+}
